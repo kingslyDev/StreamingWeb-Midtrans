@@ -5,3 +5,15 @@
 .flex::after {
     display: none !important;
 }
+
+@layer components {
+    [type="text"]:focus,
+    [type="email"]:focus,
+    [type="url"]:focus,
+    [type="password"]:focus,
+    [type="number"]:focus,
+    [type="date"]:focus {
+        border-color: transparent;
+        --tw-ring-color: transparent;
+    }
+}

@@ -1,4 +1,5 @@
 import Input from "@/Components/TextInput";
+import Label from "@/Components/InputLabel";
 
 export default function login() {
     return (
@@ -25,29 +26,22 @@ export default function login() {
                     <form className="w-[370px]">
                         <div className="flex flex-col gap-6">
                             <div>
-                                <label className="text-base block mb-2">
-                                    Email Address
-                                </label>
+                                <Label
+                                    forinput="email"
+                                    value={"Email Addres"}
+                                />
                                 <Input
                                     type="email"
                                     name="email"
                                     placeholder="Email Address"
                                 />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
-                                    placeholder="Email Address"
-                                />
                             </div>
                             <div>
-                                <label className="text-base block mb-2">
-                                    Password
-                                </label>
-                                <input
+                                <Label forinput="password" value={"Password"} />
+
+                                <Input
                                     type="password"
                                     name="password"
-                                    className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
                                     placeholder="Password"
                                 />
                             </div>
