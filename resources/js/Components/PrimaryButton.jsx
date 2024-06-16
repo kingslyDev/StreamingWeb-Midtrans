@@ -1,7 +1,6 @@
 export default function PrimaryButton({
     type = "submit",
     className = "",
-    variant = "primary",
     disabled,
     processing,
     children,
@@ -10,13 +9,11 @@ export default function PrimaryButton({
     return (
         <button
             {...props}
-            className={
-                "rounded-2xl bg-alerange py-[13px] text-center" +
-                (processing ? "opacity-30" : "") +
-                `btn-{variant}` +
-                className
-            }
-            disabled={processing}
+            type={type}
+            className={`rounded-2xl bg-alerange py-[13px] text-center ${
+                processing ? "opacity-30" : ""
+            } ${className}`}
+            disabled={disabled || processing}
         >
             {children}
         </button>

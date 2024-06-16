@@ -19,11 +19,15 @@ Route::get('/', function () {
 
 Route::redirect('/', '/prototype/login'); 
 
-Route::prefix('prototype')->group(function(){
+Route::prefix('prototype')->name('prototype.')->group(function(){
 
     Route::get('/login', function(){
         return Inertia::render('Prototype/login');
-    });
+    })->name('login');
+
+    Route::get('/register', function(){
+        return Inertia::render('Prototype/register');
+    })->name('register');
 
 });
 

@@ -4,10 +4,10 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import SecondaryButton from "@/Components/SecondaryButton";
 import { Link } from "@inertiajs/react";
 
-export default function login() {
+export default function register() {
     return (
         <>
-            <head title="Login" />
+            <head title="signup" />
             <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
@@ -21,7 +21,7 @@ export default function login() {
                         <img src="/images/moonton-white.svg" alt="" />
                         <div className="my-[70px]">
                             <div className="font-semibold text-[26px] mb-3">
-                                Welcome Back
+                                Sign Up
                             </div>
                             <p className="text-base text-[#767676] leading-7">
                                 Explore our new movies and get <br />
@@ -31,39 +31,54 @@ export default function login() {
                         <form className="w-[370px]">
                             <div className="flex flex-col gap-6">
                                 <div>
-                                    <Label
-                                        forinput="email"
-                                        value={"Email Addres"}
-                                    />
+                                    <Label className="text-base block mb-2">
+                                        Full Name
+                                    </Label>
+
                                     <Input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email Address"
+                                        type="text"
+                                        name="fullname"
+                                        placeholder="Your Fullname"
                                     />
                                 </div>
                                 <div>
-                                    <Label
-                                        forinput="password"
-                                        value={"Password"}
+                                    <Label className="text-base block mb-2">
+                                        Email Address
+                                    </Label>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
+                                        placeholder="Your Email Address"
                                     />
-
+                                </div>
+                                <div>
+                                    <Label className="text-base block mb-2">
+                                        Password
+                                    </Label>
                                     <Input
                                         type="password"
                                         name="password"
-                                        placeholder="Password"
+                                        className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
+                                        placeholder="Your Password"
                                     />
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
+                                <a
+                                    href="/"
+                                    className="rounded-2xl bg-alerange py-[13px] text-center"
+                                >
+                                    <span className="text-base font-semibold">
+                                        {" "}
+                                        Sign Up{" "}
+                                    </span>
+                                </a>
                                 <SecondaryButton type="button">
-                                    <Link href={route("prototype.register")}>
-                                        Create A New Account
+                                    <Link href={route("prototype.login")}>
+                                        Sign In to My Account
                                     </Link>
                                 </SecondaryButton>
-
-                                <PrimaryButton type="submit">
-                                    Start Watching
-                                </PrimaryButton>
                             </div>
                         </form>
                     </div>

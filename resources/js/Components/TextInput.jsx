@@ -1,4 +1,5 @@
 import { forwardRef, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 const TextInput = forwardRef(function TextInput(
     {
@@ -18,11 +19,11 @@ const TextInput = forwardRef(function TextInput(
     },
     ref
 ) {
-    const input = ref ? ref : useRef();
+    const inputRef = useRef(null);
 
     useEffect(() => {
-        if (isFocused && input.current) {
-            input.current.focus();
+        if (isFocused && inputRef.current) {
+            inputRef.current.focus();
         }
     }, [isFocused]);
 
@@ -34,15 +35,30 @@ const TextInput = forwardRef(function TextInput(
             value={value}
             autoComplete={autoComplete}
             required={required}
-            className={
-                "rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none" +
-                className
-            }
-            ref={input}
-            onChange={handleChange} // Tambahkan handleChange di sini
+            defaultValue={defaultValue}
+            className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full ${
+                isError ? "input-error" : ""
+            } input-${variant} ${className}`}
+            ref={ref || inputRef}
+            onChange={handleChange}
             placeholder={placeholder}
         />
     );
 });
+
+TextInput.propTypes = {
+    type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
+    name: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    className: PropTypes.string,
+    variant: PropTypes.oneOf(["primary", "error", "primary-outline"]),
+    autoComplete: PropTypes.string,
+    required: PropTypes.bool,
+    isFocused: PropTypes.bool,
+    handleChange: PropTypes.func,
+    placeholder: PropTypes.string,
+    isError: PropTypes.bool,
+};
 
 export default TextInput;
