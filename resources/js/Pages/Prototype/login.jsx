@@ -2,12 +2,12 @@ import Input from "@/Components/TextInput";
 import Label from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import SecondaryButton from "@/Components/SecondaryButton";
-import { Link } from "@inertiajs/react";
+import { Link, Head } from "@inertiajs/react";
 
 export default function login() {
     return (
         <>
-            <head title="Login" />
+            <Head title="Login" />
             <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
@@ -62,7 +62,9 @@ export default function login() {
                                 </SecondaryButton>
 
                                 <PrimaryButton type="submit">
-                                    Start Watching
+                                    <Link href={route("prototype.dashboard")}>
+                                        Start Watching
+                                    </Link>
                                 </PrimaryButton>
                             </div>
                         </form>

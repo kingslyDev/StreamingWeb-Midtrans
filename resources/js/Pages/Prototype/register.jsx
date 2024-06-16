@@ -2,12 +2,12 @@ import Input from "@/Components/TextInput";
 import Label from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import SecondaryButton from "@/Components/SecondaryButton";
-import { Link } from "@inertiajs/react";
+import { Link, Head } from "@inertiajs/react";
 
 export default function register() {
     return (
         <>
-            <head title="signup" />
+            <Head title="Register" />
             <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
@@ -65,15 +65,11 @@ export default function register() {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <a
-                                    href="/"
-                                    className="rounded-2xl bg-alerange py-[13px] text-center"
-                                >
-                                    <span className="text-base font-semibold">
-                                        {" "}
-                                        Sign Up{" "}
-                                    </span>
-                                </a>
+                                <PrimaryButton type="button">
+                                    <Link href={route("prototype.dashboard")}>
+                                        Sign Up
+                                    </Link>
+                                </PrimaryButton>
                                 <SecondaryButton type="button">
                                     <Link href={route("prototype.login")}>
                                         Sign In to My Account
