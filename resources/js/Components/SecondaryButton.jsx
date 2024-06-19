@@ -10,7 +10,7 @@ export default function SecondaryButton({
             {...props}
             type={type}
             className={
-                `rounded-2xl border border-white py-[13px] text-center ${
+                `rounded-2xl border border-black py-[13px] text-center ${
                     disabled && "opacity-25"
                 } ` + className
             }

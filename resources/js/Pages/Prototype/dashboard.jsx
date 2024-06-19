@@ -45,7 +45,13 @@ export default function dashboard() {
                 </div>
                 <Flickity className="gap-[30px] " options={flickityOptions}>
                     {[1, 2, 3, 4, 5, 6].map((i) => (
-                        <MovieCard key={i} />
+                        <MovieCard
+                            key={i}
+                            slug="the-cat-funny"
+                            name={`the cat funny ${i}`}
+                            category="comedy"
+                            thumbnail="/images/browse-1.png"
+                        />
                     ))}
                 </Flickity>
             </div>

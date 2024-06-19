@@ -1,6 +1,5 @@
 import PropType from "prop-types";
-import feature from "./featureMovie";
-
+import { Link } from "@inertiajs/react";
 moviecard.proptype = {
     slug: PropType.string.isRequired,
     name: PropType.string.isRequired,
@@ -9,28 +8,22 @@ moviecard.proptype = {
     rating: PropType.number.isRequired,
 };
 
-export default function moviecard({
-    slug,
-    name,
-    category,
-    thumbnail,
-    rating = 0,
-}) {
+export default function moviecard({ slug, name, category, thumbnail }) {
     return (
         <>
             <div className="absolute group overflow-hidden mr-[30px]">
                 <img
-                    src="/images/browse-1.png"
+                    src={thumbnail}
                     className="object-cover rounded-[30px] h-[340px] w-[250px]"
                     alt=""
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px]">
                     <div className="px-7 pb-7">
                         <div className="font-medium text-xl text-white">
-                            Meong Golden
+                            {name}
                         </div>
                         <p className="mb-0 text-gray-300 text-base mt-[10px]">
-                            Horror • Love
+                            {category}
                         </p>
                     </div>
                 </div>
@@ -45,7 +38,10 @@ export default function moviecard({
                         alt=""
                     />
                 </div>
-                <a href="watching.html" className="inset-0 absolute z-50"></a>
+                <Link
+                    href={route("prototype.movie.show", slug)}
+                    className="inset-0 absolute z-50"
+                ></Link>
             </div>
         </>
     );
