@@ -19,6 +19,12 @@ Route::get('/', function () {
 
 Route::redirect('/', '/login'); 
 
+Route::get('/dashboard', function () {
+    return Inertia::render('User/Dashboard/index');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
 Route::prefix('prototype')->name('prototype.')->group(function(){
 
     Route::get('/login', function(){
@@ -45,10 +51,6 @@ Route::prefix('prototype')->name('prototype.')->group(function(){
 
 
 
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
