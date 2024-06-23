@@ -1,5 +1,5 @@
-import Input from "@/Components/TextInput";
 import React, { useEffect, useState } from "react";
+import Input from "@/Components/TextInput";
 import Label from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
 import SecondaryButton from "@/Components/SecondaryButton";
@@ -68,6 +68,7 @@ export default function Register() {
                                         type="text"
                                         name="name"
                                         value={data.name}
+                                        className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
                                         autoComplete="name"
                                         isFocused={true}
                                         handleChange={onHandleChange}
@@ -87,6 +88,7 @@ export default function Register() {
                                         type="email"
                                         name="email"
                                         value={data.email}
+                                        isFocused={true}
                                         className="rounded-2xl bg-form-bg py-[13px] px-7 w-full focus:outline-alerange focus:outline-none"
                                         placeholder="Your Email Address"
                                         handleChange={onHandleChange}
