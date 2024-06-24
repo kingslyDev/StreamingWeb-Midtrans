@@ -19,7 +19,7 @@ class MovieTableSeeder extends Seeder
             'category'=> 'cartoon',
             'video_url'=> 'https://www.youtube.com/watch?v=2w_K3CB8PuE',
             'thumbnail'=> 'https://m.media-amazon.com/images/M/MV5BYTg0ZGQ0ZmEtNmE2Zi00M2VkLWI0YjAtOGJlZTA3MzIwNjIzXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg',
-            'rating'=> 9.5,
+            'rating'=> 4.5,
             'is_featured'=> 1,
             
         ],
@@ -29,7 +29,7 @@ class MovieTableSeeder extends Seeder
             'category'=> 'cartoon',
             'video_url'=> 'https://www.youtube.com/watch?v=qkgkUCqEum4',
             'thumbnail'=> 'https://lumiere-a.akamaihd.net/v1/images/p_moana2_3113-v3_075bd347.jpeg',
-            'rating'=> 9.6,
+            'rating'=> 4.6,
             'is_featured'=> 0,
             
         ],
@@ -39,7 +39,7 @@ class MovieTableSeeder extends Seeder
             'category'=> 'cartoon',
             'video_url'=> 'https://www.youtube.com/watch?v=L4DrolmDxmw',
             'thumbnail'=> 'https://upload.wikimedia.org/wikipedia/id/f/f7/Inside_Out_2_poster.jpg',
-            'rating'=> 9.8,
+            'rating'=> 4.8,
             'is_featured'=> 0,
             
         ]

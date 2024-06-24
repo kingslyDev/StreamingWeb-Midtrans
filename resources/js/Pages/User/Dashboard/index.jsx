@@ -4,7 +4,7 @@ import MovieCard from "@/Components/movieCard";
 import Flickity from "react-flickity-component";
 import { Head } from "@inertiajs/react";
 
-export default function Dashboard({ auth }) {
+export default function Dashboard({ auth, featureMovie, movies }) {
     const flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -27,14 +27,14 @@ export default function Dashboard({ auth }) {
                     Featured Movies
                 </div>
                 <Flickity className="gap-[30px] " options={flickityOptions}>
-                    {[1, 2, 3, 4].map((i) => (
+                    {featureMovie.map((featureMovie) => (
                         <Feature
-                            key={i}
-                            slug="the-batman-inlove"
-                            name={`the batman in love ${i}`}
-                            category="comedy"
-                            thumbnail="/images/featured-1.png"
-                            rating={i + 1}
+                            key={featureMovie.id}
+                            slug={featureMovie.slug}
+                            name={featureMovie.name}
+                            category={featureMovie.category}
+                            thumbnail={featureMovie.thumbnail}
+                            rating={4.5}
                         />
                     ))}
                 </Flickity>
@@ -44,13 +44,13 @@ export default function Dashboard({ auth }) {
                     Browse
                 </div>
                 <Flickity className="gap-[30px] " options={flickityOptions}>
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
+                    {movies.map((movie) => (
                         <MovieCard
-                            key={i}
-                            slug="the-cat-funny"
-                            name={`the cat funny ${i}`}
-                            category="comedy"
-                            thumbnail="/images/browse-1.png"
+                            key={movie.id}
+                            slug={movie.slug}
+                            name={movie.name}
+                            category={movie.category}
+                            thumbnail={movie.thumbnail}
                         />
                     ))}
                 </Flickity>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\User\DashboardController;
 
 
 
@@ -19,9 +20,10 @@ Route::get('/', function () {
 
 Route::redirect('/', '/login'); 
 
-Route::get('/dashboard', function () {
-    return Inertia::render('User/Dashboard/index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'role:user'])->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+});
+
 
 
 
