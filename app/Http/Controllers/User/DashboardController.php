@@ -18,5 +18,6 @@ class DashboardController extends Controller
             "featureMovie"=>$featuredMovie,
             "movies"=>$movies,
         ]);
+        
     }
 }
