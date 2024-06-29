@@ -5,9 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\User\DashboardController;
-
-
-
+use App\Http\Controllers\User\MovieController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -22,7 +20,9 @@ Route::redirect('/', '/login');
 
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
 });
+
 
 
 
@@ -46,7 +46,7 @@ Route::prefix('prototype')->name('prototype.')->group(function(){
     })->name('subscription');
 
     Route::get('/movie/{slug}', function(){
-        return Inertia::render('Prototype/movie/show');
+        return Inertia::render('/movie/show');
     })->name('movie.show');
 });
 

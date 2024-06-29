@@ -34,7 +34,7 @@ export default function Dashboard({ auth, featureMovie, movies }) {
                             name={featureMovie.name}
                             category={featureMovie.category}
                             thumbnail={featureMovie.thumbnail}
-                            rating={4.5}
+                            rating={featureMovie.rating}
                         />
                     ))}
                 </Flickity>
