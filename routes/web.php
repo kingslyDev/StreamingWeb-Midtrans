@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\MovieController;
+use App\Http\Controllers\User\SubscriptionPlanController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -21,6 +22,7 @@ Route::redirect('/', '/login');
 Route::middleware(['auth', 'role:user'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
+    Route::get('subscription-plan',[SubscriptionPlanController::class,'index'])->name('subscriptionPlan.index');
 });
 
 
